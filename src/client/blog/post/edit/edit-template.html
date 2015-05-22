@@ -11,5 +11,5 @@
     <label for="postContent">Content</label>
     <textarea ng-model="state.post.content" name="postContent" class="form-control" rows="20" ></textarea>
   </div>
-  <button class="btn btn-default" type="submit" ng-click="state.save()">Add Post</button>
+  <button class="btn btn-default" type="submit" ng-click="state.save()">{{state.editing ? 'Edit' : 'Add Post'}}</button>
 </form>

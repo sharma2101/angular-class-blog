@@ -1,10 +1,23 @@
-EditController.$inject = ['Post'];
-function EditController(Post) {
-  this.post = new Post();
+EditController.$inject = ['Post', '$routeParams'];
+function EditController(Post, $routeParams) {
+  this.Post = Post;
+  if($routeParams.postId){
+    this.editing = true;
+    this.post = Post.get({postId: $routeParams.postId});
+  } else{
+    this.editing = false;
+    this.post = new Post();
+  }
+
 }
 EditController.prototype = Object.create ( {
   save: function () {
-    return this.post.$save();
+    if(this.editing){
+      return this.Post.update({postId: this.post.id}, this.post);
+    }else{
+      return this.post.$save();
+    }
+
   }
 });
 
