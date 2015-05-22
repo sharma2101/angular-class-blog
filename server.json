@@ -3,12 +3,16 @@
     "root": "./src/client",
     "scripts": {
       "types": [
-        "main"
+        "main", "component"
       ]
     },
     "vendors": {
-      "prefix": [],
-      "js": [],
+      "prefix": [
+        "node_modules"
+      ],
+      "js": [
+        "rupert-plugin-angular/node_modules/angular-builds/angular-route.js"
+      ],
       "css": []
     }
   },
