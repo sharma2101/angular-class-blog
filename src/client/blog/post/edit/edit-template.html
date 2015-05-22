@@ -1,0 +1,15 @@
+<form name='post-editor'>
+  <div class="form-group">
+  <label for="postTitle"> Title</label>
+  <input ng-model="state.post.title" name="postTitle" class="form-control" placeholder="Post" />
+  </div>
+  <div class="form-group">
+    <label for="postSnippet">Snippet</label>
+    <input ng-model="state.post.snippet" name="postSnippet" class="form-control" placeholder="Post" />
+  </div>
+  <div class="form-group">
+    <label for="postContent">Content</label>
+    <textarea ng-model="state.post.content" name="postContent" class="form-control" rows="20" ></textarea>
+  </div>
+  <button class="btn btn-default" type="submit" ng-click="state.save()">Add Post</button>
+</form>
